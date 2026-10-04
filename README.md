@@ -1,8 +1,8 @@
-# Herdr subagent panes
+# opencode-v2-omo-slim-herdr-panes
 
-This OpenCode V2 CLI plugin opens Herdr panes for child sessions and reports their
-state in the Herdr agent sidebar. Each pane runs a small Node.js launcher. The
-launcher connects Mini to the existing OpenCode service:
+This OpenCode V2 CLI plugin opens Herdr panes for child sessions, including those
+created by OMO Slim, and reports their state in the Herdr agent sidebar. Each pane
+runs a small Node.js launcher. The launcher connects Mini to the existing OpenCode service:
 
 ```sh
 /absolute/path/to/opencode2 mini --server <service-url> --session <session-id>
@@ -185,7 +185,7 @@ old child-state wrapper at the same time.
 Child sidebar entries use `Subagent - <OpenCode agent name>`, for example
 `Subagent - explorer`. Child task and session titles are not used. The child pane
 label uses the same name. Child metadata uses `herdr:opencode-subagent-metadata`
-and applies only to `herdr:opencode-subagent-panes`.
+and applies only to `herdr:opencode-v2-omo-slim-herdr-panes`.
 
 The main sidebar entry uses `Agent - <root OpenCode session title>`. Its metadata
 uses `herdr:opencode-primary-metadata` and applies only to the `opencode:tui`
@@ -231,13 +231,13 @@ not implemented; keep only one such TUI open if you want one pane per child.
 ## Options
 
 Set options in the global `~/.config/opencode/cli.json`, not `opencode.json`.
-For a checkout at `./plugins/herdr-subagent-panes`, use:
+For a checkout at `./plugins/opencode-v2-omo-slim-herdr-panes`, use:
 
 ```json
 {
   "plugins": [
     {
-      "package": "./plugins/herdr-subagent-panes",
+      "package": "./plugins/opencode-v2-omo-slim-herdr-panes",
       "options": {
         "mainPaneWidthPercent": 60
       }

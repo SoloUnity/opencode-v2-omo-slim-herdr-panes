@@ -1,4 +1,4 @@
 export default {
-  id: "herdr.opencode.subagent-panes.server",
+  id: "opencode-v2-omo-slim-herdr-panes.server",
   setup() {},
 };

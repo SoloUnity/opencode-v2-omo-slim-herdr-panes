@@ -1132,7 +1132,7 @@ test("native execution reports child identity and state, never the parent", asyn
   let sequence = 0;
   for (const { args } of f.commands("report-agent")) {
     assert.equal(args[2], "w1:p2");
-    assert.equal(args[args.indexOf("--source") + 1], "herdr:opencode-subagent-panes");
+    assert.equal(args[args.indexOf("--source") + 1], "herdr:opencode-v2-omo-slim-herdr-panes");
     assert.equal(args[args.indexOf("--agent") + 1], "opencode");
     assert.equal(args[args.indexOf("--agent-session-id") + 1], "ses_child");
     const next = Number(args[args.indexOf("--seq") + 1]);
@@ -1710,7 +1710,7 @@ test("child metadata has only the exact subagent label with independent source a
   const args = f.commands("report-metadata")[0].args;
   assert.deepEqual(args.slice(0, -1), ["pane", "report-metadata", "w1:p2",
     "--source", "herdr:opencode-subagent-metadata", "--agent", "opencode",
-    "--applies-to-source", "herdr:opencode-subagent-panes", "--display-agent", "Subagent - explorer",
+    "--applies-to-source", "herdr:opencode-v2-omo-slim-herdr-panes", "--display-agent", "Subagent - explorer",
     "--clear-title", "--seq"]);
   await f.start();
   await f.emit("permission.asked", { sessionID: "ses_child", id: "per_1" });

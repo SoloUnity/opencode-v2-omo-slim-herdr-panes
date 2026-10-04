@@ -1,9 +1,9 @@
 {
-  "name": "herdr-subagent-panes",
+  "name": "opencode-v2-omo-slim-herdr-panes",
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
-  "repository": "https://github.com/SoloUnity/herdr-subagent-panes",
+  "repository": "https://github.com/SoloUnity/opencode-v2-omo-slim-herdr-panes",
   "exports": {
     ".": "./index.js",
     "./tui": "./tui.js"

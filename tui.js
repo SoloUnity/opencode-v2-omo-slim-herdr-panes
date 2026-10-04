@@ -8,7 +8,7 @@ const execFileAsync = promisify(execFile);
 const CHILD_PANE_ENV = "OPENCODE_HERDR_SUBAGENT_PANE";
 const CLOSE_ATTEMPTS = 3;
 const CLOSE_RETRY_MS = 1_000;
-const REPORT_SOURCE = "herdr:opencode-subagent-panes";
+const REPORT_SOURCE = "herdr:opencode-v2-omo-slim-herdr-panes";
 const METADATA_SOURCE = "herdr:opencode-subagent-metadata";
 const PRIMARY_METADATA_SOURCE = "herdr:opencode-primary-metadata";
 const REPORT_RETRY_MS = 500;
@@ -126,7 +126,7 @@ async function verifyAncestry(shellPID) {
 }
 
 export default {
-  id: "herdr.opencode.subagent-panes",
+  id: "opencode-v2-omo-slim-herdr-panes",
   async setup(context) {
     const parentPaneID = process.env.HERDR_PANE_ID;
     if (
@@ -186,12 +186,12 @@ export default {
     const updated = new Map();
 
     const warn = (message) => {
-      console.warn(`herdr-subagent-panes: ${message}`);
+      console.warn(`opencode-v2-omo-slim-herdr-panes: ${message}`);
       if (warned || disposed) return;
       warned = true;
       try {
         context.ui.toast.show({
-          title: "Herdr subagent panes",
+          title: "OpenCode V2 OMO Slim Herdr panes",
           message,
           variant: "warning",
           duration: 5_000,
